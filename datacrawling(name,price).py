@@ -1,3 +1,4 @@
+  
 #########################
 # 프로그램명 : 상품 이름, 가격 크롤링
 # 작성자 : 이준재
@@ -9,7 +10,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-url = 'https://store.musinsa.com/app/contents/bestranking' # 옥션 남성 의류 상품 페이지의 상품정보와 가격을 크롤링해옴.
+url = 'http://www.auction.co.kr/category/category13.html' # 옥션 남성 의류 상품 페이지의 상품정보와 가격을 크롤링해옴.
 
 r = requests.get(url)
 html = r.content
@@ -17,7 +18,7 @@ soup = BeautifulSoup(html, 'html.parser')
 
 
 
-titles_html = soup.find_all('div', class_='tabBox box_menu_left') # 상품 이름 가격
+titles_html = soup.select('.product-list div.content') # 상품 이름 가격
 
-for i in titles_html: # 상품 30개 출력
-     print(i)
+for i in range(30): # 상품 30개 출력
+     print(titles_html[i].text)

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<!--
+프로그램명 : 가격구간 설정 기능
+작성자 : 이준재
+작성일 : 2020-06-14
+팀명 : 파이썬클라스 (4조)
+프로그램 설명: 입력받은 가격구간 정보 전달
+-->
+
+<form class="form-inline my-2 my-lg-0" method='GET' action = "{% url 'men' %}" >
+    <input class="form-control mr-sm-2" type="text"  name='price1' value="{{price1}}">
+    <input class="form-control mr-sm-2" type="text"  name='price2' value="{{price2}}">
+    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+  </form>

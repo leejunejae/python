@@ -7,40 +7,22 @@
 #########################
 
 import requests
-import urllib.request
-import urllib.parse
-import re
 from bs4 import BeautifulSoup
 
-
-
-# 저장할 이미지 경로 및 이름 (data폴더에 face0.jpg 형식으로 저장)
-imageNum = 0
-imageStr = "data/face"
-
-
-url = "https://store.musinsa.com/app/"
-
+url = 'http://www.auction.co.kr/category/category13.html'
 
 r = requests.get(url)
 html = r.content
 soup = BeautifulSoup(html, 'html.parser')
-data = soup.find_all('img')
+eee = soup.find_all("img", class_="line")
 
-a=[]
-for m in data:
-    b=m.get('src')
-    a.append(b)
+
+# '리스트 a'에 이미지 링크를 담아서 a에 담긴 이미지 주소를 for문으로 출력시
+a = []
+for m in eee:
+    if 'itemimage' in m.get('src'):
+        b = m.get('src')
+        a.append(b)  # 이미지인것만 리스트에 삽입
 
 for i in a:
     print(i)
-    # 이미지 경로를 받아 로컬에 저장한다.
-#for i in a:
-#    imageNum += 1
-#    urllib.request.urlretrieve(i, 'data' + str(imageNum) + ".jpg")
-
-
-
-
-
-

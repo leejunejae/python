@@ -11,7 +11,7 @@ from products.models import Product
 
 def search(request):
     products = Product.objects.all()
-    sdata = request.GET.get('','')
+    sdata = request.GET.get('b','')
 
     search = []
     for i in products :

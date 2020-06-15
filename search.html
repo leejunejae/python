@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<!--
+프로그램명 : 검색 기능 
+작성자 : 이준재
+작성일 : 2020-06-12
+팀명 : 파이썬클라스 (4조)
+프로그램 설명: 검색 기능 웹사이트 적용 코드
+-->
+<form class="form-inline my-2 my-lg-0" method='GET' action = "{% url 'search' %}" >
+  <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" name='b' value="{{b}}">
+  <button class="btn btn-outline-light my-2 my-sm-0" type="submit" value="{{b}}">Search</button>
+</form>
